@@ -264,13 +264,53 @@ namespace M3u8Downloader_H.ViewModels
                 failedDownload.OnRestart();
         }
 
-        public void CopyUrl(DownloadViewModel download) => Clipboard.SetText(download.RequestUrl.OriginalString);
-
-        public void CopyTitle(DownloadViewModel download) => Clipboard.SetText(download.VideoName);
-
-        public void CopyFailReason(DownloadViewModel download) => Clipboard.SetText(download.FailReason);
-
-        public void CopyLogs(DownloadViewModel download) => Clipboard.SetText(download.CopyLog());
+        public void CopyUrl(DownloadViewModel download) 
+        {
+            try
+            {
+                Clipboard.SetText(download.RequestUrl.OriginalString);
+            }
+            catch
+            {
+        
+            }
+        }
+        
+        public void CopyTitle(DownloadViewModel download)  
+        {
+            try
+            {
+                Clipboard.SetText(download.VideoName);
+            }
+            catch
+            {
+        
+            }
+        }
+        
+        public void CopyFailReason(DownloadViewModel download) 
+        {
+            try
+            {
+                Clipboard.SetText(download.FailReason);
+            }
+            catch
+            {
+        
+            }
+        }
+        
+        public void CopyLogs(DownloadViewModel download)
+        {
+            try
+            {
+                 Clipboard.SetText(download.CopyLog());
+            }
+            catch
+            {
+        
+            }
+        }
 
 
         public bool CanShowSettings => !IsShowDialog;
